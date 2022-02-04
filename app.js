@@ -11,7 +11,7 @@ app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 var database, collection;
 
-app.listen(5001, () => {
+app.listen(8080, () => {
     MongoClient.connect(CONNECTION_URL, { useNewUrlParser: true }, (error, client) => {
         if(error) {
             throw error;

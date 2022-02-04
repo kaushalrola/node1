@@ -15,7 +15,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
-mongoose.connect('mongodb+srv://kaushal:rola@cluster0.o0ojd.mongodb.net/mydb?retryWrites=true&w=majority', { useNewUrlParser: true});
+mongoose.connect('mongodb+srv://kaushal:rola@cluster0.o0ojd.mongodb.net/mydb?retryWrites=true&w=majority', { useNewUrlParser: true}).then(() => {
+    console.log("db connected")
+});
 var db = mongoose.connection;
 
 // Added check for DB connection
